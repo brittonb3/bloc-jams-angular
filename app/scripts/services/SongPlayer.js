@@ -42,6 +42,12 @@
                 song.playing = true;
         };
         
+        /**
+        * @function stopSong
+        * @scope private
+        * @desc stops a song by stoping the currentBuzzObject
+        *@param {object} song
+        */
         var stopSong = function(song) {
             currentBuzzObject.stop();
             SongPlayer.currentSong.playing = null;
@@ -96,7 +102,7 @@
         /**
         * @function SongPlayer.previous
         * @scope public
-        * @desc gets the previous song fromt the current song index
+        * @desc gets the previous song from the current song index
         * @param {object} song
         */
         SongPlayer.previous = function() {
@@ -111,7 +117,12 @@
                 playSong(song);
             }
         };
-        
+        /**
+        * @function SongPlayer.next
+        * @scope public
+        * @desc gets the next song from the current song index
+        * @param {object} song
+        */
         SongPlayer.next = function() {
             var currentSongIndex = getSongIndex(SongPlayer.currentSong);
             currentSongIndex++;
