@@ -80,6 +80,12 @@
         */
         SongPlayer.currentTime = null;
         
+        /** 
+        * @desc Current volume of currently playing song
+        * @type {Number}
+        */
+        SongPlayer.volume = 30;
+        
         /**
         * @function SongPlayer.play
         * @scope public
@@ -158,6 +164,18 @@
                 currentBuzzObject.setTime(time);
             }
         };
+        
+        /**
+        * @function setVolume
+        * @desc Set volume of currently playing song
+        * @param {Number} volume
+        */
+        SongPlayer.setVolume = function(volume) {
+            if (currentBuzzObject) {
+                currentBuzzObject.setVolume(volume);
+            }
+        };
+        
       
         return SongPlayer;
     }
